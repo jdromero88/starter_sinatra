@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Edit Song</title>
+    </head>
+    <body>
+        <h1>Edit <%= @song.name %> </h1>
+        <form action="/songs/<%=@song.id%>" method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            <label for="name">Song Name:</label>
+            <input type="text" name="name" value="<%=@song.name %>">
+            <label for="lenth">Duration:</label>
+            <input type="text" name="length" value="<%=@song.length %>">
+            <label for="lyrics">Duration:</label>
+            <input type="text" name="lyrics" value="<%=@song.lyrics %>">
+            <input type="submit" name="submit" value="Update Song">
+        </form>
+    </body>
+</html>

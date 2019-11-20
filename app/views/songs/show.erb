@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title><%= @song.name %></title>
+    </head>
+    <body>
+        <h1><%= @song.name %></h1>
+
+        <div>
+            <h3>Duration: <%= @song.length %></h3>
+        </div>
+
+        <div>
+            <h3>Lyrics:</h3>
+            <p><%= @song.lyrics %></p>
+        </div>
+
+        <!-- add a link to go back to this songs band -->
+        <a href="/songs/<%=@song.id%>/edit">Edit Song</a>
+        <a href="/bands">Back To Bands Page</a>
+        <a href="/">Home Page</a>
+        <form  action="/songs/<%=@song.id%>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" name="" value="DELETE">
+        </form>
+    </body>
+
+</html>

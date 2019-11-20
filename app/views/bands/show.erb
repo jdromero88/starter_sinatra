@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title><%=@band.name%> page</title>
+    </head>
+    <body>
+        <h1><%=@band.name%></h1>
+        <div >
+            <h2>Band Background:</h2>
+            <h4><%=@band.info%></h4>
+        </div>
+        <div>
+            <h2>Band's Songs:</h2>
+            <ul>
+                <% @band.songs.each do |song|%>
+                    <li><a href="/songs/<%=song.id%>"><%= song.name %></a></li>
+                <%end%>
+            </ul>
+        </div>
+        <a href="/bands">Back To Bands Page</a>
+        <a href="/bands/<%=@band.id%>/edit">Edit band</a>
+        <a href="/">Home Page</a>
+
+        <form  action="/bands/<%=@band.id%>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" name="" value="DELETE">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Edit Band</title>
+    </head>
+    <body>
+        <h1>Edit <%= @band.name %> </h1>
+        <form action="/bands/<%=@band.id%>" method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            <label for="name">Band Name:</label>
+            <input type="text" name="name" value="<%=@band.name %>">
+            <label for="info">Band Info:</label>
+            <input type="text" name="info" value="<%=@band.info %>">
+            <input type="submit" name="submit" value="Update Band">
+        </form>
+    </body>
+</html>

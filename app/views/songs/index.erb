@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Songs index</title>
+    </head>
+    <body>
+        <h1>List of Songs</h1>
+            <ul>
+                <% Song.all.each do |song| %>
+                    <li><a href="/songs/<%=song.id%>"><%= song.name %></a></li>
+                <%end%>
+            </ul>
+        <a href="/songs/new">Create New Song</a>
+        <a href="/">Home Page</a>
+    </body>
+</html>

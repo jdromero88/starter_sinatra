@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Create New Band</title>
+    </head>
+    <body>
+        <h1>Create New Song  </h1>
+
+        <form action="/songs" method="post">
+
+            <select name="band_id">
+                <% Band.all.each do |band| %>
+                       <option value=<%= band.id %> ><%= band.name %></option>
+                <% end %>
+            </select>
+            <label for="name">Song Name:</label>
+            <input type="text" name="name" value="">
+            <label for="length">Duration:</label>
+            <input type="text" name="length" value="">
+            <label for="lyrics">Lyrics:</label>
+            <input type="text" name="lyrics" value="">
+            <input type="submit" name="submit" value="Create A Song">
+        </form>
+
+    </body>
+</html>
